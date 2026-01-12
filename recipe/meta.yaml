@@ -1,18 +1,18 @@
 {% set name = "copier-templates-extensions" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 48b3f5213ee913b931df40e4e9325b58b9c9a741f1052a7da1b247ed991f5150
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 8a24826b656499605c0d2283a9a63d087fb68d735c6fc12f862bfe9d97d990d5
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
